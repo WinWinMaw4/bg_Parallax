@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg Parallax</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section>
+        <!-- contact bg parallax effect -->
+        <div class="contactBG d-none d-sm-none d-md-none d-lg-block">
+            <img src="img/cbg1.svg" alt="" class="layer" data-speed="-5">
+            <img src="img/cbg2.svg" alt="" class="layer" data-speed="5">
+            <img src="img/cbg3.svg" alt="" class="layer" data-speed="2">
+            <img src="img/cbg4.svg" alt="" class="layer" data-speed="6">
+            <img src="img/cbg5.svg" alt="" class="layer" data-speed="8">
+            <img src="img/cbg6.svg" alt="" class="layer" data-speed="-2">
+            <img src="img/cbg7.svg" alt="" class="layer" data-speed="4">
+            <img src="img/cbg8.svg" alt="" class="layer" data-speed="-9">
+            <img src="img/cbg9.svg" alt="" class="layer" data-speed="6">
+            <img src="img/cbg10.svg" alt="" class="layer" data-speed="-7">
+            <img src="img/cbg11.svg" alt="" class="layer" data-speed="-5">
+            <img src="img/cbg12.svg" alt="" class="layer" data-speed="5">
+            <img src="img/cbg13.svg" alt="" class="layer" data-speed="2">
+            <img src="img/cbg14.svg" alt="" class="layer" data-speed="6">
+            <img src="img/cbg15.svg" alt="" class="layer" data-speed="8">
+            <img src="img/cbg16.svg" alt="" class="layer" data-speed="-2">
+            <img src="img/cbg17.svg" alt="" class="layer" data-speed="4">
+            <img src="img/cbg18.svg" alt="" class="layer" data-speed="-9">
+            <img src="img/cbg19.svg" alt="" class="layer" data-speed="6">
+            <img src="img/cbg20.svg" alt="" class="layer" data-speed="-7">
+            <img src="img/cbg21.svg" alt="" class="layer" data-speed="-5">
+            <img src="img/cbg22.svg" alt="" class="layer" data-speed="5">
+            <img src="img/cbg23.svg" alt="" class="layer" data-speed="2">
+            <img src="img/cbg24.svg" alt="" class="layer" data-speed="6">
+        </div>
+        <div class="text">
+            <h1>Parallax</h1>
+        </div>
+    </section>
+
+    <script>
+        //parallax
+        document.addEventListener("mousemove",parallax);
+        function parallax(e){
+            this.querySelectorAll('.layer').forEach(Layer => {
+                const speed =  Layer.getAttribute('data-speed');
+                const x = (window.innerWidth -  e.pageX*speed)/100;
+                const y = (window.innerHeight -  e.pageY*speed)/100;
+                console.log(x);
+
+                Layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+            });
+        }
+    </script>
+    
+</body>
+</html>
